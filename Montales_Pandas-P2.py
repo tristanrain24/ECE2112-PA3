@@ -1,33 +1,236 @@
-Model,mpg,cyl,disp,hp,drat,wt,qsec,vs,am,gear,carb
-Mazda RX4,21.0,6,160.0,110,3.9,2.62,16.46,0,1,4,4
-Mazda RX4 Wag,21.0,6,160.0,110,3.9,2.875,17.02,0,1,4,4
-Datsun 710,22.8,4,108.0,93,3.85,2.32,18.61,1,1,4,1
-Hornet 4 Drive,21.4,6,258.0,110,3.08,3.215,19.44,1,0,3,1
-Hornet Sportabout,18.7,8,360.0,175,3.15,3.44,17.02,0,0,3,2
-Valiant,18.1,6,225.0,105,2.76,3.46,20.22,1,0,3,1
-Duster 360,14.3,8,360.0,245,3.21,3.57,15.84,0,0,3,4
-Merc 240D,24.4,4,146.7,62,3.69,3.19,20.0,1,0,4,2
-Merc 230,22.8,4,140.8,95,3.92,3.15,22.9,1,0,4,2
-Merc 280,19.2,6,167.6,123,3.92,3.44,18.3,1,0,4,4
-Merc 280C,17.8,6,167.6,123,3.92,3.44,18.9,1,0,4,4
-Merc 450SE,16.4,8,275.8,180,3.07,4.07,17.4,0,0,3,3
-Merc 450SL,17.3,8,275.8,180,3.07,3.73,17.6,0,0,3,3
-Merc 450SLC,15.2,8,275.8,180,3.07,3.78,18.0,0,0,3,3
-Cadillac Fleetwood,10.4,8,472.0,205,2.93,5.25,17.98,0,0,3,4
-Lincoln Continental,10.4,8,460.0,215,3.0,5.424,17.82,0,0,3,4
-Chrysler Imperial,14.7,8,440.0,230,3.23,5.345,17.42,0,0,3,4
-Fiat 128,32.4,4,78.7,66,4.08,2.2,19.47,1,1,4,1
-Honda Civic,30.4,4,75.7,52,4.93,1.615,18.52,1,1,4,2
-Toyota Corolla,33.9,4,71.1,65,4.22,1.835,19.9,1,1,4,1
-Toyota Corona,21.5,4,120.1,97,3.7,2.465,20.01,1,0,3,1
-Dodge Challenger,15.5,8,318.0,150,2.76,3.52,16.87,0,0,3,2
-AMC Javelin,15.2,8,304.0,150,3.15,3.435,17.3,0,0,3,2
-Camaro Z28,13.3,8,350.0,245,3.73,3.84,15.41,0,0,3,4
-Pontiac Firebird,19.2,8,400.0,175,3.08,3.845,17.05,0,0,3,2
-Fiat X1-9,27.3,4,79.0,66,4.08,1.935,18.9,1,1,4,1
-Porsche 914-2,26.0,4,120.3,91,4.43,2.14,16.7,0,1,5,2
-Lotus Europa,30.4,4,95.1,113,3.77,1.513,16.9,1,1,5,2
-Ford Pantera L,15.8,8,351.0,264,4.22,3.17,14.5,0,1,5,4
-Ferrari Dino,19.7,6,145.0,175,3.62,2.77,15.5,0,1,5,6
-Maserati Bora,15.0,8,301.0,335,3.54,3.57,14.6,0,1,5,8
-Volvo 142E,21.4,4,121.0,109,4.11,2.78,18.6,1,1,4,2
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "f6b8a0d7-ec5e-49d9-b383-d4eb42bbc4b9",
+   "metadata": {},
+   "source": [
+    "Python Data Analysis - Problem 2"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "8369b264-9a0a-4469-aaf0-e0d89cc30c25",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd\n",
+    "Cars = pd.read_csv('cars.csv')"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8c26341c-a9f1-4648-8dd3-37791213aba2",
+   "metadata": {},
+   "source": [
+    "a.) Display the first five rows with odd-numbered columns (columns 1, 3, 5, 7...) of cars."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "8c73753f-6e4e-4f93-875e-220a97fd9c64",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Model</th>\n",
+       "      <th>cyl</th>\n",
+       "      <th>hp</th>\n",
+       "      <th>wt</th>\n",
+       "      <th>vs</th>\n",
+       "      <th>gear</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>Mazda RX4</td>\n",
+       "      <td>6</td>\n",
+       "      <td>110</td>\n",
+       "      <td>2.620</td>\n",
+       "      <td>0</td>\n",
+       "      <td>4</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>Mazda RX4 Wag</td>\n",
+       "      <td>6</td>\n",
+       "      <td>110</td>\n",
+       "      <td>2.875</td>\n",
+       "      <td>0</td>\n",
+       "      <td>4</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>Datsun 710</td>\n",
+       "      <td>4</td>\n",
+       "      <td>93</td>\n",
+       "      <td>2.320</td>\n",
+       "      <td>1</td>\n",
+       "      <td>4</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>Hornet 4 Drive</td>\n",
+       "      <td>6</td>\n",
+       "      <td>110</td>\n",
+       "      <td>3.215</td>\n",
+       "      <td>1</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>Hornet Sportabout</td>\n",
+       "      <td>8</td>\n",
+       "      <td>175</td>\n",
+       "      <td>3.440</td>\n",
+       "      <td>0</td>\n",
+       "      <td>3</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "               Model  cyl   hp     wt  vs  gear\n",
+       "0          Mazda RX4    6  110  2.620   0     4\n",
+       "1      Mazda RX4 Wag    6  110  2.875   0     4\n",
+       "2         Datsun 710    4   93  2.320   1     4\n",
+       "3     Hornet 4 Drive    6  110  3.215   1     3\n",
+       "4  Hornet Sportabout    8  175  3.440   0     3"
+      ]
+     },
+     "execution_count": 6,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "Cars.iloc[:5,::2]"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d8d5a591-4e9e-433a-bd3c-ce1f55485733",
+   "metadata": {},
+   "source": [
+    "Display the row that contains the ‘Model’ of ‘Mazda RX4’"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "25222fa2-8c20-4e08-be5d-a5013260318f",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>Model</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>Mazda RX4</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "       Model\n",
+       "0  Mazda RX4"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "Cars.loc[Cars['Model']=='Mazda RX4', ['Model']]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "33137e06-0421-4fea-853a-8acf4e0d4629",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "How many cylinders (‘cyl’) does the car model ‘Camaro Z28’ have?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "8201b082-4272-4f3f-8531-93f26ddb7c5c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "Cars.loc[Cars['Model']=='Camaro Z28', ['Model','cyl']]"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.12.4"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
