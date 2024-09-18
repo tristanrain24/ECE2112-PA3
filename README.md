@@ -156,7 +156,7 @@ Likewise, the first part specifies the row location of the "Camaro Z28" at the c
 
 The output:
 ```
-    Model	   cyl
+    Model	  cyl
 23	Camaro Z28	8
 ```
 The last problem, problem D which is to determine how many cylinders (‘cyl’) and what gear type (‘gear’) do the car models ‘Mazda RX4
@@ -170,8 +170,8 @@ Cars.loc[Cars['Model'].isin(['Mazda RX4 Wag','Ford Pantera L','Honda Civic']), [
 
 The output:
 ```
-       	Model	    cyl	   gear
+Model	    cyl	   gear
 1	Mazda RX4 Wag	    6	    4
-18	Honda Civic     	4    	4
+18	Honda Civic  	4    	4
 28	Ford Pantera L  	8	    5
 ```
