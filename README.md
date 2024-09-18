@@ -175,3 +175,5 @@ The output:
 18	Honda Civic	4	4
 28	Ford Pantera L	8	5
 ```
+## Version History
+1.0
